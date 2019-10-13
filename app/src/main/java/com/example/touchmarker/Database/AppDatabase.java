@@ -17,7 +17,7 @@ import com.example.touchmarker.Model.FavoriteBus;
 import com.example.touchmarker.Model.Stop;
 
 
-@Database(entities = {Bus.class, Stop.class, BusStopTime.class, FavoriteBus.class},version = 1,exportSchema = false)
+@Database(entities = {Bus.class, Stop.class, BusStopTime.class, FavoriteBus.class},version = 2,exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     public abstract BusesDao busesDao();
