@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">TouchMarker</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="ApiKey">AIzaSyCayeo_Ic5JnOkSfAilRV8d3IZOyPKR8lw</string>
+    <string name="AppName">WhichBus</string>
+</resources>

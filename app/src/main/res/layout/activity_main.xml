@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:elevation="10dp"
+        android:background="@drawable/bg_round"
+        android:id="@+id/relative_layout_start_point">
+        
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/start_point"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Konumunuz..."
+            android:textSize="20sp"
+            android:textAlignment="center"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginRight="18dp"
+        android:elevation="10dp">
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/map"
+        android:layout_marginBottom="45dp">
+
+        <Button
+            android:id="@+id/gps_btn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/icons8_gps_48"></Button>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/listbus_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/bottom_layout"
+        android:layout_marginBottom="60dp">
+
+        <Button
+            android:id="@+id/bus_list_btn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/icons8_circle_bus"></Button>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@id/listbus_layout"
+        android:layout_marginBottom="60dp">
+        <Button
+            android:id="@+id/favBusBtn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@mipmap/icons8_heart_64">
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
