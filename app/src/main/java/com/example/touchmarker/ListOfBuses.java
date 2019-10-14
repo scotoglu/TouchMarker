@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.touchmarker.Adapter.CustomAdapter;
 import com.example.touchmarker.Database.AppDatabase;
@@ -16,6 +17,7 @@ import com.example.touchmarker.Model.FavoriteBus;
 import com.example.touchmarker.Model.ModelBus;
 import com.example.touchmarker.RetrofitOperations.RetrofitOps;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,7 @@ public class ListOfBuses extends AppCompatActivity implements CustomAdapter.OnIt
 
     final ArrayList<ModelBus> tempBus = new ArrayList<>();
 
+    private boolean checkDb = false;
     private CustomAdapter mAdapter;
     private AppDatabase appDatabase;
     private RecyclerView recyclerView;
@@ -34,9 +37,7 @@ public class ListOfBuses extends AppCompatActivity implements CustomAdapter.OnIt
         setContentView(R.layout.activity_list_bus);
 
         RetrofitOps retrofitOps = new RetrofitOps(this);
-       /* retrofitOps.getStopsFromApi();
-        retrofitOps.getBusStopTimeFromApi();
-        retrofitOps.getBusesFromApi();*/
+
 
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -46,8 +47,8 @@ public class ListOfBuses extends AppCompatActivity implements CustomAdapter.OnIt
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
         enableSwipeToAdd();
-
         fetchBusForRecycler();
+
     }
 
     private void fetchBusForRecycler() {
@@ -59,6 +60,7 @@ public class ListOfBuses extends AppCompatActivity implements CustomAdapter.OnIt
         }
         writeRecyclerView(tempBus);
     }
+
 
 
     private void writeRecyclerView(ArrayList<ModelBus> tempBus) {
